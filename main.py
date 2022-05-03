@@ -1,4 +1,4 @@
-from singly_linked_list import LinkedList
+from singly_linked_list import SinglyLinkedList
 
 def printReverse(node):
   if node is not None:
@@ -7,7 +7,7 @@ def printReverse(node):
   else:
     return
 
-linked_list = LinkedList()
+linked_list = SinglyLinkedList()
 linked_list.insert(0, 1)
 linked_list.insert(0, 2)
 linked_list.insert(0, 3)
