@@ -54,3 +54,14 @@ class LinkedList:
         raise IndexError()
       
       current_node.next_node = current_node.next_node.next_node
+    
+  def length(self):
+    '''
+    Dynamically calculate the length of the linked list.
+    '''
+    length = 0
+    node = self.head
+    while node is not None:
+      node = node.next_node
+      length += 1
+    return length
