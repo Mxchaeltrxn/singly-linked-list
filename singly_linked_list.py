@@ -32,3 +32,25 @@ class LinkedList:
       
       node_to_insert.next_node = current_node.next_node
       current_node.next_node = node_to_insert
+
+  def delete(self, position):
+    '''
+    Delete a node from a certain position in the linked list.
+    An error is thrown if the position is negative or larger than the length of the list.
+    '''
+    if self.head is None or position < 0:
+      raise IndexError()
+    
+    if position == 0:
+      self.head = self.head.next_node
+    else:
+      current_node = self.head
+      loopIndex = 1
+      while current_node.next_node is not None and loopIndex != position:
+        current_node = current_node.next_node
+        loopIndex += 1
+      
+      if current_node.next_node is None:
+        raise IndexError()
+      
+      current_node.next_node = current_node.next_node.next_node
